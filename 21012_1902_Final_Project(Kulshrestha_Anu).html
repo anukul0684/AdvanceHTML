@@ -1,0 +1,894 @@
+<!doctype html>
+
+
+<html lang="en">
+  <head>
+    <title>21012_1902_Final_Project(Kulshrestha_Anu)</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+
+    ////////////////////////////////////////////////
+    //                                            //
+    //    Program Name: Web Development           //
+    //     Course Name: Advanced HTML5/CSS3       //
+    //           Batch: WDD7 - Jan 2020           //
+    //      Instructor: Brent Scott               //
+    //            Final Project                   // 
+    //                                            //
+    //    Submitted by: Anu Kulshrestha           //
+    //                                            //
+    ////////////////////////////////////////////////
+
+    -->
+    
+    <script src="JS_files/old_ie.js"></script>
+    
+    <!-- Conditional Comments for version of Internet Explorer 8 and lower
+         to understand that following HTML5 elements should be block. -->
+         
+    
+    <!--[if LTE IE 9]>
+     
+      <style type="text/css">
+        header, nav, section, footer, article, main{
+          display:block;
+        }
+      
+        nav ul#sub_menu{
+          display:none !important;
+        }
+      
+        nav ul li.has_submenu:hover ul#sub_menu{
+          display:block !important;
+        }
+      
+        nav li{
+          display:inline;
+        }         
+        
+        #wrapper{
+          background-color: #fcc;
+        }
+        
+        header{
+          background-color: #ccc;
+        } 
+        
+        .logo{        
+          width: 100px;
+          height: 100px;
+          padding-left: 10px;
+          padding-top: 10px;
+        } 
+        
+        input[type="submit"], input[type="reset"]{
+          color: #aaa !important;
+        }
+        
+        input[type="submit"]:hover, input[type="reset"]:hover{
+          color: #333 !important;
+        }
+        
+        footer #footer_menu ul#footmenu li a:hover{
+          background-color: #ccc;
+        }
+        
+        nav ul li ul#sub_menu li a:hover{
+          background-color: #ffc;        
+        }
+        
+        nav ul li a:hover{
+          background-color: #ffc;  
+        }
+        
+        #annual_regform legend{ 
+          background-color: #ccc; 
+        }
+      
+      </style>
+      
+     <![endif]-->
+          
+    <!-- Google font linked to load on web page while loading. Both regular and bold are used.-->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700&display=swap" rel="stylesheet">
+        
+    <style>
+        
+      /*
+         _____  _____ _____    _____ ____  _____  ______   
+        / ____|/ ____/ ____|  / ____/ __ \|  __ \|  ____|  
+       | |    | (___| (___   | |   | |  | | |  | | |__     
+       | |     \___ \\___ \  | |   | |  | | |  | |  __|    
+       | |____ ____) |___) | | |___| |__| | |__| | |____   
+        \_____|_____/_____/   \_____\____/|_____/|______|  
+      
+      */
+      
+      /*Animation created of "h1" for older version of Chrome, Safari, and Opera web browsers*/      
+      @-webkit-keyframes h1{
+        from{           
+          opacity: 0.2;
+        }
+        to{        
+          opacity: 1;
+        }         
+      }
+      
+      /*Animation created of "h1" for older version of firefox*/
+      @-moz-keyframes h1{
+        from{           
+          opacity: 0.2;
+        }
+        to{        
+          opacity: 1;
+        }         
+      }
+      
+      /*Animation created of "h1" for older version of IE*/
+      @-ms-keyframes h1{
+        from{           
+          opacity: 0.2;
+        }
+        to{        
+          opacity: 1;
+        }         
+      }
+      
+      /*Animation created of "h1" for latest version of Chrome, Opera, Safari, and Firefox*/      
+      @keyframes h1{
+        from{          
+          opacity: 0.2;
+        }
+        to{
+          opacity: 1;
+        }         
+      }      
+      
+      /* General declaration for the webpage that will be inherited 
+         wherever its not declared exclusively.*/      
+      body{
+        font-family: 'Merriweather', serif;
+        font-size: 16px; 
+        font-weight: 400;        
+        margin: 0;        
+        background-image: radial-gradient(circle, #388, #eee);
+      }
+      
+      /* CSS rule declarations for the webpage in its div container*/
+      #wrapper{
+        width: 960px;
+        margin: 0 auto;
+        position: relative;
+        box-sizing: border-box;
+      }
+      
+      /* ********* CSS rule declarations for semantic element header ********* */      
+      header{
+        height: 140px;        
+        padding-top: 1px;        
+        color: #fff;        
+        position: fixed;
+        z-index: 1;
+        background-image: linear-gradient(to bottom right, #388, #eee);
+      }
+      
+      header picture{
+        float: left;
+        position: relative;
+        top: 20px;
+        left: 20px;
+      }
+      
+      .logo{        
+        width: 100px;
+        height: 100px;
+      }      
+        
+      .big_logo{        
+        width: 100px;
+        height: 100px;
+      }
+      
+      h1{
+        float: right;     
+        
+        /*Animation applied to the content*/
+        -webkit-animation: h1 2s ease-in-out;
+        -moz-animation: h1 2s ease-in-out;
+        -ms-animation: h1 2s ease-in-out;
+        animation: h1 2s ease-in-out;         
+        font-weight: 700;     
+        position: absolute;
+        top: 0;
+        right: 30px;
+      }
+      
+      #headcontent{
+        position: absolute;
+        top: 100px;
+        right: 30px;
+        clear: both;
+        float: right;
+        display: inline-block;  
+        box-sizing: border-box;
+      }
+
+      #headcontent input[type="text"]{
+        width: 120px;
+        background-color: #eed;        
+        border: 2px solid #999;
+        padding: 3px 0;
+        height: 14px;
+        display: inline-block;
+        text-align: center;
+        font-size: 0.8em;    
+        font-family: 'Merriweather', serif;
+      }
+
+      #headcontent a{
+        text-decoration: none;   
+        color: #fff; 
+        display: inline-block;
+        background-image: linear-gradient(to top left, #388, #eee);
+        padding: 1px 0 1px 0;        
+        width: 80px;
+        text-align: center;
+        border: 2px solid #999;
+        font-size: 0.8em;
+        font-weight: 700;
+      }
+
+      #headcontent a:hover{
+        color: #333; 
+      }
+      
+      #headcontent #profile_pic{
+        width: 18px;
+        height: 20px;
+        vertical-align: middle;
+      }
+      
+      #headcontent #profile_link{
+        width: 20px;
+        height: 20px;
+      }      
+      /* ********* End of CSS rule declarations for semantic element header ********* */ 
+      
+      /* ********* CSS rule declarations for semantic element nav ********* */ 
+      nav{        
+        height: 40px;
+        padding-top: 1px; 
+        position: fixed;
+        top: 140px;        
+
+        z-index: 2;
+        background-color: #eee;
+      }
+      
+      /* ********* CSS rule declarations for primary unordered list of nav ********* */ 
+      nav ul{
+        padding: 0;
+        margin: 0;
+        white-space: nowrap;
+        text-align: center;        
+      }
+      
+      /* ********* CSS rule declarations for primary list items of primary unordered list of nav ********* */       
+      nav ul li{
+        list-style-type: none;
+        display:inline-block; 
+        position: relative;
+        box-sizing: border-box;        
+      }
+      
+      /* ********* CSS rule declarations for main nav tabs menu ********* */ 
+      nav ul li a{
+        display: block;
+        text-decoration: none;
+        color: #366;
+        font-weight: 700;                
+        box-sizing: border-box;
+        padding: 10px 0 10px 0;
+        width: 162px;
+        border: 1px solid transparent;  
+      }
+      
+      /* ********* CSS rule declarations for underline effect on main nav menu elements ********* */      
+      nav ul li a.main_nav::after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background-color: #388;
+        transition: width .3s ease-in-out;        
+      }
+      
+      /* ********* CSS rule declarations for "hover" for underline 
+                   effect on main nav menu elements ********* */
+      nav ul li a.main_nav:hover::after{
+        width: 100%; 
+      }      
+      
+      /* ********* CSS rule declarations hover on main menu elements of nav ********* */            
+      nav ul li a:hover{
+        color: #266;
+        text-shadow: -2px -2px 3px rgba(3,3,3,0.3);
+        background-image: linear-gradient(to top left, #5aa, #eee);  
+        border: 1px solid #388;         
+      }
+      
+      /* ********* CSS rule declarations for main menu element having sub menu elements of nav ********* */ 
+      nav ul li ul#sub_menu{
+        position: absolute;
+        background-color: #388;
+        top: 40px;
+        left: 0;
+        padding-left: 1px;        
+        width: 160px;        
+        display:none;
+        max-height:0;
+        -webkit-transition: max-height 500ms ease-in-out;
+        -moz-transition: max-height 500ms ease-in-out;
+        -o-transition: max-height 500ms ease-in-out;
+        transition: max-height 500ms ease-in-out;        
+      }
+      
+      /* ********* CSS rule declarations for hover on main menu element 
+                   having sub menu elements of nav ********* */ 
+      nav ul li.has_submenu:hover ul#sub_menu{        
+        display: block;
+        max-height: 350px;         
+      }
+      
+      /* ********* CSS rule declarations for list of sub menu elements of nav ********* */
+      nav ul li ul#sub_menu li{
+        display: block;
+        box-sizing: border-box;
+        background-color: #eee;
+        margin: 2px;         
+      }  
+      
+      /* ********* CSS rule declarations for hover on list of sub menu elements of nav ********* */
+      nav ul li ul#sub_menu li a:hover{
+        width: 158px;
+        
+      }
+      /* ********* End of CSS rule declarations for semantic element nav ********* */
+      
+      /* ********* CSS rule declarations for semantic element section ********* */
+      section{
+        min-height: 650px;        
+        padding: 1px 30px 1px 30px;        
+        box-sizing: border-box;  
+        vertical-align: middle;
+        width: 100%;
+      }
+      
+      /* ********* CSS rule declarations for h2 header element ********* */
+      h2{
+        text-align: center;
+        margin-bottom: 0;
+        padding-top: 180px;
+        font-weight: 700;
+        color: #366;
+      }
+        
+      /* ********* CSS rule declarations for form element ********* */
+      #annual_regform{
+        width: 100%;
+      }
+      
+      /* ********* CSS rule declarations for fieldset elements of form of webpage ********* */
+      #annual_regform fieldset{
+        margin-top: 3px;
+        background-image: linear-gradient(to top left, #388, #eee);  
+        border: 1px solid #333;
+        margin-top: 10px;
+        box-sizing: border-box;
+        width: 100%;
+      }
+      
+      /* ********* CSS rule declarations for first fieldset element of form of webpage ********* */
+      #annual_regform fieldset#personalinfo{
+        margin-top: 10px;
+      }
+      
+      /* ********* CSS rule declarations for second fieldset element of form of webpage ********* */
+      #annual_regform fieldset#additionalinfo{
+        margin-top: 30px;
+      }
+      
+      /* ********* CSS rule declarations for legend of form of webpage ********* */
+      #annual_regform legend{  
+        background-image: linear-gradient(to top left, #388, #eee);
+        color: #266;
+        padding: 8px;
+        border: 1px solid #333;
+        width: 150px;    
+        font-weight: 700;
+      }
+      
+      /* ********* CSS rule declarations for label of form of webpage ********* */
+      #annual_regform label.info{
+        display: block;
+        width: 310px;
+        clear: both;
+        float: left; 
+        text-align: right;
+        padding-right: 20px;
+        padding-left: 90px;
+        color: #255;
+        font-weight: 700;
+      }
+      
+      /* ********* CSS rule declarations for input elements of form of webpage ********* */
+      #annual_regform input[type="text"], 
+      #annual_regform input[type="tel"], 
+      #annual_regform input[type="number"], 
+      #annual_regform input[type="email"], 
+      #annual_regform input[type="url"],
+      #annual_regform input[list],
+      #annual_regform input[type="date"]{
+              width: 250px;
+              background-color: #eed;        
+              border: 2px solid #999;
+              padding: 6px;
+              font-family: 'Merriweather', serif;
+      }    
+      
+      /* ********* CSS rule declarations for disabled input elements of form of webpage ********* */  
+      #annual_regform #Name{
+        color: #388;
+        font-weight: 700;
+        background-color: #eed;
+      }
+
+      /* ********* CSS rule declarations for h3 of webpage ********* */
+      h3{
+        text-align: center;
+        font-weight: 700;
+        font-size: 1.3em;
+        padding-top: 4px;
+      }
+      
+      /* ********* CSS rule declarations for div containing submit and reset buttons of webpage ********* */
+      #sent{
+        text-align: center;        
+      }
+
+      /* ********* CSS rule declarations for submit and reset buttons of webpage ********* */
+      input[type="submit"], input[type="reset"]{
+        padding: 5px 10px;
+        display: inline-block;
+        width: 100px;
+        background-image: linear-gradient(to top left, #388, #eee);
+        color: #fff;
+        border: 2px solid #999;
+        font-weight: 700;
+        font-family: 'Merriweather', serif;
+      }
+
+      /* ********* CSS rule declarations for hover on submit and reset buttons of webpage ********* */
+      input[type="submit"]:hover, input[type="reset"]:hover{
+        color: #333;  
+      }           
+      /* ********* End of CSS rule declarations for semantic element section ********* */  
+      
+      /* ********* CSS rule declarations for semantic element footer ********* */       
+      footer{
+        height: 140px;              
+        padding: 1px 9px;
+        text-align: center;
+      }      
+      
+      footer #footer_menu ul#footmenu{
+        margin-top: 20px;
+        text-align: center;
+        vertical-align: bottom;  
+        margin-bottom: 40px; 
+        font-weight: 700;
+        color: #366;
+      }
+
+      footer #footer_menu ul#footmenu li{
+        display: inline-block;  
+        list-style-type: none;
+      }
+
+      footer #footer_menu ul#footmenu li a{
+        text-decoration: none;         
+        color: #333;
+        padding: 12px 20px 12px 20px;
+        display: block;
+        width: 100px;        
+      }
+
+      footer #footer_menu ul#footmenu li a:hover{
+        background-image: linear-gradient(to top left, #388, #eee);
+      }
+      
+      footer #copy_right{             
+        color: #000;
+        font-weight: 700;       
+      }
+      
+      /* If the device (or window) reading the page is LESS THAN 960 pixels, set the width
+        of its “wrapper” (container DIV) to 100%.*/
+      @media all and (min-width:769px) and (max-width: 959px){
+        #wrapper{
+          width: 100%; 
+          background-color: #fcc;
+        }        
+      }
+      
+      /*If the device (or window) reading the page is GREATER THAN (or equal to) 960
+        pixels, set the width of its “wrapper” (container DIV) to 960 pixels.*/
+      /*Detect if the user is on a desktop device, and set the background colour of your
+        “wrapper” to light red.*/
+      @media all and (min-width: 960px){
+        #wrapper{
+          max-width: 960px;        
+          margin: 0 auto; 
+          background-color: #fcc; /*light red*/
+        }
+        header, nav{
+          width: 960px;            
+        }
+      }      
+      
+      /*Detect if the user is on a mobile device (767 or less pixels), and make the
+        background colour of your “wrapper” light green.*/
+      @media all and (max-width: 767px){
+        
+        #wrapper{
+          width: auto; 
+          margin: 0 auto;
+          background-color: #cfc; /*light green*/
+        }          
+        
+        h1{
+          font-size: 1.3rem;
+        }
+        
+        header, nav {
+          width: 100%;          
+          font-size: 0.8rem;
+        }       
+        
+        section, footer{
+          font-size: 0.8rem;
+        }
+        
+        .logo{        
+          width: 75px;
+          height: 75px;
+        }
+        
+        input[type="submit"], input[type="reset"]{
+          width: 80px;
+          font-size: 0.7rem;
+        }
+        
+        #annual_regform label.info{
+          width: 150px;
+          padding-right: 5px;
+          padding-left: 15px;
+        }
+        
+        #annual_regform input[type="text"], 
+        #annual_regform input[type="tel"], 
+        #annual_regform input[type="number"], 
+        #annual_regform input[type="email"], 
+        #annual_regform input[type="url"],
+        #annual_regform input[list],
+        #annual_regform input[type="date"], 
+        textarea{
+          width: 150px;
+          padding: 6px 2px;
+          font-size: 0.7rem;
+        }
+        
+        #headcontent a{
+          width: 2.6rem;
+        }
+        
+        #headcontent input[type="text"]{
+          width: 4rem;
+        }
+        
+        footer #copy_right{
+          
+          font-size: 0.5rem;
+        }
+        
+        nav ul li a{
+          width: 80px;
+          font-size: 0.6rem;
+        }
+        
+        nav ul li ul#sub_menu{
+          width: 78px;
+          font-size: 0.6rem;
+          top: 34px;
+        }
+        
+        nav ul li ul#sub_menu li a:hover{
+          width: 76px;
+        }
+      }
+      /* ********* End of CSS rule declarations for semantic element footer ********* */
+      
+      /* ********* CSS rule declarations for responsive webpage ********* */
+      
+      /*Detect if the user is specifically on an iPad (every iPad except the “pro”), and make
+        the background colour of your “wrapper” light blue. (This colour should not show
+        up in other devices, especially a “desktop”. ) iPad resolution is 768 x 1024*/
+      @media all and (width: 768px){        
+        #wrapper{
+          width: auto;  
+          background-color: #ccf;          
+        }
+        
+        h1{
+          color: #266;
+        }
+        
+        header, nav {
+          width: 100%;          
+          font-size: 0.8rem;
+        }    
+        
+        section, footer{
+          font-size: 0.8rem;
+        }
+        
+        input[type="submit"], input[type="reset"]{
+          width: 90px;
+          font-size: 0.8rem;
+        }
+        
+        #annual_regform label.info{
+          
+          padding-left: 10px;
+        }
+        
+        #annual_regform input[type="text"], 
+        #annual_regform input[type="tel"], 
+        #annual_regform input[type="number"], 
+        #annual_regform input[type="email"], 
+        #annual_regform input[type="url"],
+        #annual_regform input[list],
+        #annual_regform input[type="date"],
+        textarea
+        {           
+          font-size: 0.8rem;
+        }
+        
+        #headcontent a{
+          width: 3.6rem;
+        }
+        
+        #headcontent input[type="text"]{
+          width: 5rem;
+        }
+        
+        nav ul li a{
+          width: 110px;
+          font-size: 0.75rem;
+        }
+        
+        nav ul li ul#sub_menu{
+          width: 108px;
+          font-size: 0.75rem;
+          top: 36px;
+        }
+        
+        nav ul li ul#sub_menu li a:hover{
+          width: 106px;
+        }
+      }  
+      /* ********* End of CSS rule declarations for media queries ********* */
+      
+    </style>    
+  </head>
+
+  <body>
+    <div id="wrapper"> <!-- Contains the entire page -->       
+      <header>     
+       
+        <!--Use a different (smaller) logo for your mobile view. You can use a logo of your
+          own creation (in 2 different versions) or use an existing logo if you like, but it MUST
+          be 2 different images. (hint: use <picture> for this) You may use more if you like, as
+          long as everything works.-->
+        <picture>
+          <source class="logo" media="(max-width:767px)" srcset="Images/Logo.jpg" />
+          <source class="logo" media="(min-width:768px)" srcset="Images/Logo-full.jpg" />                
+          <img class="big_logo" src="Images/Logo-full.jpg" alt="big one"/>
+        </picture>       
+        
+        <h1>Bengaluru Kulshrestha</h1>      
+        
+        <div id="headcontent">
+          <a id="profile_link" href="#">
+            <img id="profile_pic" alt="profile pic" src="Images/blank-profile-picture.png" />
+          </a>
+          
+          <input type="text" 
+                 name="search"
+                 id="search"                
+                 placeholder="Search Here"/>
+                 
+          <a href="#">Search</a>                
+          <a href="#">Logout</a> 
+        </div>      
+      </header>
+      
+      <nav>       
+        <ul>
+          <li><a class="main_nav" href="#">Home</a></li>
+          <li><a class="main_nav" href="#">About Us</a></li>
+          <li class="has_submenu"><a class="main_nav" href="#">Events</a>
+            <ul id="sub_menu">
+              <li><a href="#">Annual Meet</a></li>
+              <li><a href="#">Picnic</a></li>
+              <li><a href="#">News</a></li>
+              <li><a href="#">Gallery</a></li>
+              <li><a href="#">Videos</a></li>                                       
+            </ul>
+          </li>
+          <li class="has_submenu"><a class="main_nav" href="#">Registration</a>             
+          </li>   
+          <li><a class="main_nav" href="#">Contact Us</a></li>
+        </ul>        
+      </nav>
+      
+      <section id="content">       
+        <h2>Annual Meet Registration</h2>
+        
+        <!-- Form to collect info for annual meet registration -->
+        <form id="annual_regform"
+           method="post"
+           action="http://www.scott-media.com/test/form_display.php" 
+           autocomplete="on">            
+          
+          <!-- in future these elements may be replaced by backend code -->
+          <input type="hidden" name="name" value="Anu Kulshrestha" />
+          <input type="hidden" name="emailid" value="anusrivastava2004@gmail.com" />
+          
+          <!-- 1st part of the form for personal details -->
+          <fieldset id="personalinfo">
+            <legend>Personal Info</legend>
+            
+            <!-- Person's Name. In future will be fetched from backend -->
+            <p>
+              <label class="info" for="Name">Your Registered Name:</label> 
+              <input type="text" 
+                     name="Name"
+                     id="Name" 
+                     maxlength="40" 
+                     size="20" value="Anu Kulshrestha" disabled/> 
+            </p>                
+            
+            <!-- Person's Mobile number -->
+            <p>
+              <label class="info" for="mob_number">Contact Number (M):</label>
+              <input type="tel"
+                     name="mob_number"
+                     id="mob_number" 
+                     required="required"
+                     placeholder="Enter your Mobile no." autocomplete="off"/>
+            </p>           
+            
+            <!-- Person's Family Members attending in numbers -->
+            <p> 
+              <label class="info" for="familyMembers">Family Members Attending the Event:</label>
+              <input type="number"
+                     name="familyMembers"
+                     id="familyMembers"
+                     required="required"
+                     placeholder="In numbers"/>
+            </p>            
+            
+            <!-- Person's number of Kids attending in numbers (if any)-->
+            <p> 
+              <label class="info" for="kids">Kids Attending the Event:</label>
+              <input type="number"
+                     name="kids"
+                     id="kids"
+                     required="required"
+                     placeholder="In numbers"/>
+            </p>                 
+            
+            <!-- Select option to participate in the event-->
+            <p> 
+              <label class="info">Wish to Participate in Any Event:</label>
+              <input list="participation" name="participation" required="required">
+              <datalist id="participation">                                       
+                <option value="Yes"></option>
+                <option value="No"></option>
+                <option value="Not Yet Decided"></option>                         
+              </datalist>
+            </p>        
+            
+            <!-- Any extra information to share with admin -->
+            <p> 
+              <label class="info" for="addinfo">Additional Information:</label> 
+              <textarea name="addinfo" 
+                        id="addinfo" 
+                        cols="34"
+                        rows="3" 
+                        placeholder="You may enter your ideas here or suggest any performance"></textarea>          
+            </p>        
+          </fieldset>           
+          <!-- End of 1st part of the form for personal details -->
+         
+          <!-- 2nd part of the form for additional details -->
+          <fieldset id="additionalinfo">        
+            <legend>Additional Details</legend>
+
+            <!-- Person's email id. In future will be fetched from backend -->
+            <p>
+              <label class="info" for="email_address">Registered Email Id:</label>
+              <input type="email" 
+                     name="email_address"
+                     id="email_address"/> 
+            </p>
+            
+            <!-- Ask for optional mobile number. -->
+            <p>
+              <label class="info" for="optional_mobile">Mobile Number (Optional):</label>
+              <input type="tel"
+                     name="optional_mobile"
+                     id="optional_mobile"                    
+                     placeholder="Enter Your Optional Mobile Number"/> 
+            </p>
+            
+            <!-- ask for link to share for ideas to celebrate the event games -->
+            <p>
+              <label class="info"  for="game_link">Website Link for Games:</label>
+              <input type="url" id="game_link" name="game_link" />
+            </p>
+            
+            <!-- ask for date anyone prefers to change the annual meet -->
+            <p>
+              <label class="info" for="event_date">Alternate Date You Prefer:</label>
+              <input type="date"
+                     name="event_date"
+                     id="event_date" /> 
+            </p>            
+          </fieldset> 
+          <!-- End of 2nd part of the form for login registration -->        
+          
+          <!-- Action buttons -->
+          <p id="sent">
+            <input type="submit" 
+                   id="subreg" 
+                   value="Register"/> &nbsp; <!-- Click to submit for registration -->
+            <input type="reset"
+                    value="Clear Form"/> <!-- Click to clear the form -->       
+          </p>             
+        </form>        
+      </section>     
+      
+      <footer>      
+        <div id="footer_menu">
+          <ul id="footmenu">          
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Contact Us</a></li>          
+            <li><a href="#">Join Us</a></li>          
+          </ul>
+        </div>
+        
+        <div id="copy_right">
+          &copy; 2020 AYN Technologies Ltd. All Rights Reserved.
+        </div>        
+      </footer>    
+    </div>
+  </body>
+</html>
