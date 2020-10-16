@@ -1,0 +1,342 @@
+<!doctype html>
+
+
+<html lang="en">
+  <head>
+    <title>21012_1902_Assignment1(Kulshrestha_Anu)!</title>
+    <meta charset="utf-8" />
+    
+    <!--
+
+    ////////////////////////////////////////////////
+    //                                            //
+    //    Program Name: Web Development           //
+    //     Course Name: Advanced HTML5/CSS3       //
+    //           Batch: WDD7 - Jan 2020           //
+    //      Instructor: Brent Scott               //
+    //      Assignment: 1                         // 
+    //                                            //
+    //    Submitted by: Anu Kulshrestha           //
+    //                                            //
+    ////////////////////////////////////////////////
+
+    -->
+    <!--Google font linked to the webpage-->    
+    <link href="https://fonts.googleapis.com/css?family=Spectral:400i,800i&display=swap" rel="stylesheet">
+    
+    <!--Embedded Style CSS starts here-->
+    <style>
+      /*
+         _____  _____ _____    _____ ____  _____  ______   
+        / ____|/ ____/ ____|  / ____/ __ \|  __ \|  ____|  
+       | |    | (___| (___   | |   | |  | | |  | | |__     
+       | |     \___ \\___ \  | |   | |  | | |  | |  __|    
+       | |____ ____) |___) | | |___| |__| | |__| | |____   
+        \_____|_____/_____/   \_____\____/|_____/|______|  
+      */
+      
+      /*Downloaded font linked to the webpage for Heading 1*/
+      @font-face{
+        src: url("fonts/Frozito-eZ99g.ttf") format("ttf"),
+          url("fonts/Frozito-eZ99g.ttf") format("truetype"); 
+        font-weight: normal;
+        font-style: normal;
+        font-family: 'Frozito-eZ99g';
+      }
+      
+      /*Animation created of "quote3" for older version of Chrome, Safari, and Opera web browsers*/
+      @-webkit-keyframes quote3_animation{
+        0%{
+          border: 2px solid #000;           
+        }
+        50%{
+          transform: rotateX(60deg);         
+          border-color: #cce;             
+        } 
+        100%{
+          border: 2px solid #000;
+        }
+      }
+      
+      /*Animation created of "quote3" for older version of firefox*/
+      @-moz-keyframes quote3_animation{
+        0%{
+          border: 2px solid #000;           
+        }
+        50%{
+          transform: rotateX(60deg);         
+          border-color: #cce;             
+        } 
+        100%{
+          border: 2px solid #000;
+        }
+      }
+      
+      /*Animation created of "quote3" for latest version of Chrome, Opera, Safari, and Firefox*/
+      @keyframes quote3_animation{
+        0%{
+          border: 2px solid #000;
+        }
+        50%{
+          transform: rotateX(60deg);           
+          border-color: #cce;                       
+        }     
+        100%{
+          border: 2px solid #000;
+        }
+      }
+      
+      /*Animation created of "copyright" for older version of Chrome, Safari, and Opera web browsers*/
+      @-webkit-keyframes copyright_animation{
+        from{           
+          opacity: 0.2;
+        }
+        to{        
+          opacity: 1;
+        }         
+      }
+      
+      /*Animation created of "copyright" for older version of firefox*/
+      @-moz-keyframes copyright_animation{
+        from{           
+          opacity: 0.2;
+        }
+        to{        
+          opacity: 1;
+        }         
+      }
+      
+      /*Animation created of "copyright" for latest version of Chrome, Opera, Safari, and Firefox*/
+      @keyframes copyright_animation{
+        from{          
+          opacity: 0.2;
+        }
+        to{
+          opacity: 1;
+        }         
+      }
+      
+      /*CSS rule for body element in html5*/
+      body{
+        font-family: Spectral, serif;
+        font-size: 16px; 
+        font-weight: 400;
+        background-color: #333;
+        margin: 0;
+      }
+      
+      /*Background image added to body element in html5*/
+      body{
+        background-image: url(ElsaFrozen2.jpg);
+        background-repeat: no-repeat;
+        background-position: top;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+      
+      /*Positioning of div container of all elements with id as "wrapper"*/
+      #wrapper{
+        max-width: 960px;
+        margin: 0 auto; 
+        position: relative;
+        box-sizing: border-box;
+      }
+      
+      /*Positioning of semantic element header*/
+      header{        
+        padding-top: 1px;        
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      
+      /*CSS style for heading 1 of the webpage*/
+      h1{
+        font-family: 'Frozito-eZ99g', serif;
+        font-size: 3em;
+        font-weight: normal;
+        font-style: normal;
+        color: #9ae;            
+      }
+      
+      /*CSS class created for box shadow to apply to multiple html elements*/
+      .quote_shadow{
+        -webkit-box-shadow: 5px 5px 8px rgba(255,255,255,0.8);
+        -moz-box-shadow: 5px 5px 8px rgba(255,255,255,0.8);
+        box-shadow: 5px 5px 8px rgba(255,255,255,0.8);
+      }
+      
+      /*CSS class created for round corners to apply to multiple html elements*/
+      .quote_rounded{
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px; 
+        border-radius: 10px;
+      }
+      
+      /*CSS rules applied to div container with id quote1*/
+      #quote1{
+        font-family: Spectral, serif;
+        position: absolute;
+        top: 300px;
+        left: 2px;
+        float: left; 
+        border: 2px solid #000;
+        width: 200px;  
+        font-weight: 400;      
+        padding: 20px 3px 20px 3px;
+        
+        /*transition applied to the div container with id quote1*/
+        -webkit-transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        -moz-transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);        
+      }
+      
+      /*CSS rules applied to div container with id quote2*/
+      #quote2{
+        font-family: Spectral, serif;
+        position: absolute;
+        top: 300px;
+        right: 2px;
+        float: right; 
+        border: 2px solid #000;
+        width: 200px;          
+        height: 120px;
+        font-weight: 400; 
+        padding: 20px 3px 20px 3px;   
+        
+        /*transition applied to the div container with id quote2*/
+        -webkit-transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        -moz-transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);         
+      }
+      
+      /*CSS rules applied to hover of div containers with ids quote1 and quote2*/
+      #quote1:hover, #quote2:hover{
+        text-decoration: none;
+        color: #000;
+        border-color: #cce;
+        font-weight: 800;                  
+        background: linear-gradient(#ccf, #005);
+        
+        /*transform applied to the div contatiners*/
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        transform: scale(1.2);
+      }
+      
+      /*CSS rules applied to image html element with id image_box*/
+      #image_box{        
+        clear: both;
+        position: absolute;
+        top: 100px;
+        right: 395px;
+        opacity: 0.6;
+        height: 180px;
+        width: 180px;
+        border-radius: 30px;
+        
+        /*box-shadow applied to the image*/
+        -webkit-box-shadow: 5px 5px 30px rgba(255,255,255,0.8);
+        -moz-box-shadow: 5px 5px 30px rgba(255,255,255,0.8);
+        box-shadow: 5px 5px 30px rgba(255,255,255,0.8);
+        
+        /*transition applied to the image*/
+        -webkit-transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        -moz-transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        
+        box-sizing: border-box;
+      }      
+      
+      /*transform applied to hover on image html element with id image_box*/
+      #image_box:hover{
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        transform: scale(1.2);
+      }
+      
+      /*CSS rules applied to div container with id quote3*/
+      #quote3{
+        font-family: Spectral, serif;
+        position: absolute;
+        top: 630px;
+        right: 150px;
+        border: 2px solid #000;
+        font-weight: 400;           
+        padding: 20px 5px 20px 5px;      
+        box-sizing: border-box;
+        font-size: 1.2em;
+        
+        /*Animation applied to the content*/
+        -webkit-animation: quote3_animation 12s ease-in-out 1s;
+        -moz-animation: quote3_animation 12s ease-in-out 1s;
+        animation: quote3_animation 12s ease-in-out 1s;        
+      }        
+      
+      /*CSS rules applied to hover of div container with id quote3*/
+      #quote3:hover{
+        opacity: 1;
+        color: #000;
+        border-color: #cce;                          
+        background: linear-gradient(#ccf, #005);  
+        text-shadow: -2px -2px 3px rgba(0,0,0,0.8);
+      }
+      
+      /*CSS rules applied to div container with id copy_right*/
+      #copy_right{
+        font-family: Spectral, serif;
+        position: absolute;
+        top: 720px;
+        right: 300px;
+        color: #000;
+        font-weight: 800;
+        
+        /*Animation applied to the content*/
+        -webkit-animation: copyright_animation 2s ease-in-out 1s;
+        -moz-animation: copyright_animation 2s ease-in-out 1s;
+        animation: copyright_animation 2s ease-in-out 1s; 
+      }
+      
+      /*CSS rules applied to audio added to webpage*/
+      #theme_audio{
+        position: absolute;
+        top: 712px;
+        right: 1px;
+        opacity: 0.7;
+      }
+      
+    </style>
+  </head>
+
+  <body>    
+    <div id="wrapper">
+     
+      <header>
+        <h1> Best Quotes from Frozen II</h1>
+      </header>
+      
+      <img src="Frozen.jpg" alt="frozen" id="image_box" />
+      
+      <div id="quote1" class="quote_shadow quote_rounded">
+          Never take good for granted. Be Prepared. Just when you think you've found your way, life will
+          throw you onto a new path.        
+      </div>
+      
+      <div id="quote2" class="quote_shadow quote_rounded">
+        What to you do when life does so? Don't give up. Take it one step at a time 
+        and just do the next right thing.               
+      </div>
+      
+      <div id="quote3" class="quote_shadow quote_rounded">
+        Believe on certain certainities. Some things never change. Somethings are always true.
+      </div>
+      
+      <div id="copy_right">
+        &copy; 2020 AYN Technologies Ltd. All Rights Reserved.
+      </div>
+      
+      <audio autoplay controls id="theme_audio" class="quote_shadow quote_rounded">
+        <source src="audio/ThemeSong.mp3" type="audio/mp3">
+      </audio>
+    </div>
+  </body>
+</html>
