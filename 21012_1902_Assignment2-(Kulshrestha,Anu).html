@@ -1,0 +1,942 @@
+<!doctype html>
+
+
+<html lang="en">
+  <head>
+    <title>21012_1902_Assignment2-(Kulshrestha,Anu)</title>
+    <meta charset="utf-8" />
+    
+    <!--
+
+    ////////////////////////////////////////////////
+    //                                            //
+    //    Program Name: Web Development           //
+    //     Course Name: Advanced HTML5/CSS3       //
+    //           Batch: WDD7 - Jan 2020           //
+    //      Instructor: Brent Scott               //
+    //      Assignment: 2                         // 
+    //                                            //
+    //    Submitted by: Anu Kulshrestha           //
+    //                                            //
+    ////////////////////////////////////////////////
+
+    -->
+    
+    <script src="JS_files/old_ie.js"></script>
+    
+    <!-- Hide Div with id #Image_3D and having nested transform in IE 9 -->  
+    
+    <!--[if IE 9]>
+      <style type="text/css">
+        #Image_3D{
+          display: none;
+        }  
+      </style>
+    <![endif]-->
+    
+    
+    <!-- Conditional Comments for version of Internet Explorer 8 and lower
+         to understand that following HTML5 elements should be block. 
+         Also hide Div id #Image_3D and having nested transform. -->
+    
+    <!--[if LTE IE 8]>
+     
+      <style type="text/css">
+        header, nav, section, footer, article, main{
+          display:block;
+        }
+      
+        nav ul#sub_menu{
+          display:none !important;
+        }
+      
+        nav ul li.has_submenu:hover ul#sub_menu{
+          display:block !important;
+        }
+      
+        nav li{
+          display:inline;
+        }         
+           
+        #Image_3D{
+          display: none;
+        }             
+      </style>
+      
+     <![endif]-->
+          
+    <!-- Google font linked to load on web page while loading. Both regular and bold are used.-->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700&display=swap" rel="stylesheet">
+        
+    <style>
+        
+      /*
+         _____  _____ _____    _____ ____  _____  ______   
+        / ____|/ ____/ ____|  / ____/ __ \|  __ \|  ____|  
+       | |    | (___| (___   | |   | |  | | |  | | |__     
+       | |     \___ \\___ \  | |   | |  | | |  | |  __|    
+       | |____ ____) |___) | | |___| |__| | |__| | |____   
+        \_____|_____/_____/   \_____\____/|_____/|______|  
+      
+      */
+      
+      /*Animation created of "h1" for older version of Chrome, Safari, and Opera web browsers*/      
+      @-webkit-keyframes h1{
+        from{           
+          opacity: 0.2;
+        }
+        to{        
+          opacity: 1;
+        }         
+      }
+      
+      /*Animation created of "h1" for older version of firefox*/
+      @-moz-keyframes h1{
+        from{           
+          opacity: 0.2;
+        }
+        to{        
+          opacity: 1;
+        }         
+      }
+      
+      /*Animation created of "h1" for older version of IE*/
+      @-ms-keyframes h1{
+        from{           
+          opacity: 0.2;
+        }
+        to{        
+          opacity: 1;
+        }         
+      }
+      
+      /*Animation created of "h1" for latest version of Chrome, Opera, Safari, and Firefox*/      
+      @keyframes h1{
+        from{          
+          opacity: 0.2;
+        }
+        to{
+          opacity: 1;
+        }         
+      }
+      
+      /* Animation created of div with id "#Image_3D" for older version of 
+         Chrome, Opera, Safari*/
+      @-webkit-keyframes spinner5 {
+        15% { 
+          -webkit-transform: rotateY(0);       
+        }
+        20%,35%  { 
+          -webkit-transform: rotateY(-72deg);  
+        }
+        40%,55%  { 
+          -webkit-transform: rotateY(-144deg); 
+        }
+        60%,75%  { 
+          -webkit-transform: rotateY(-216deg); 
+        }
+        80%,95%  { 
+          -webkit-transform: rotateY(-288deg); 
+        }
+        100% { 
+          -webkit-transform: rotateY(-360deg); 
+        }
+      }
+      
+      /* Animation created of div with id "#Image_3D" for older version of 
+         firefox and for current web browsers*/
+      @keyframes spinner5 {
+        15% {
+          -moz-transform: rotateY(0);          
+          transform: rotateY(0);
+        }
+        20%,35%  {
+          -moz-transform: rotateY(-72deg);          
+          transform: rotateY(-72deg);
+        }
+        40%,55%  {
+          -moz-transform: rotateY(-144deg);          
+          transform: rotateY(-144deg);
+        }
+        60%,75%  {
+          -moz-transform: rotateY(-216deg);          
+          transform: rotateY(-216deg);
+        }
+        80%,95%  {
+          -moz-transform: rotateY(-288deg);          
+          transform: rotateY(-288deg);
+        }
+        100% {
+          -moz-transform: rotateY(-360deg);          
+          transform: rotateY(-360deg);
+        }
+      }
+        
+      /* General declaration for the webpage that will be inherited 
+         wherever its not declared exclusively.*/      
+      body{
+        font-family: 'Merriweather', serif;
+        font-size: 16px; 
+        font-weight: 400;
+        background-color: #333;
+        margin: 0;        
+      }
+      
+      /* CSS rule declarations for the webpage in its div container*/
+      #wrapper{
+        max-width: 960px;
+        margin: 0 auto;
+        background-color: #fff;
+        position: relative;
+        box-sizing: border-box;
+      }
+      
+      /* ********* CSS rule declarations for semantic element header ********* */      
+      header{
+        height: 140px;
+        background-color: #030;
+        padding-top: 1px;        
+        color: #fff;        
+        position: fixed;
+        width: 960px;
+        z-index: 1;
+      }
+      
+      #logo{
+        float: left;
+        position: relative;
+        top: 20px;
+        left: 30px;
+        width: 100px;
+        height: 100px;
+      }      
+      
+      h1{
+        float: right;     
+        
+        /*Animation applied to the content*/
+        -webkit-animation: h1 2s ease-in-out;
+        -moz-animation: h1 2s ease-in-out;
+        -ms-animation: h1 2s ease-in-out;
+        animation: h1 2s ease-in-out;         
+        font-weight: 700;     
+        position: absolute;
+        top: 0;
+        right: 30px;
+      }
+      
+      #headcontent{
+        position: absolute;
+        top: 100px;
+        right: 30px;
+        clear: both;
+        float: right;
+        display: inline-block;  
+        box-sizing: border-box;
+      }
+
+      #headcontent input[type="text"]{
+        width: 120px;
+        background-color: #eed;        
+        border: 2px solid #999;
+        padding: 3px 0;
+        height: 14px;
+        display: inline-block;
+        text-align: center;
+        font-size: 0.8em;    
+        font-family: 'Merriweather', serif;
+      }
+
+      #headcontent a{
+        text-decoration: none;   
+        color: #fff; 
+        display: inline-block;
+        background-color: #383;
+        padding: 1px 0 1px 0;        
+        width: 80px;
+        text-align: center;
+        border: 2px solid #999;
+        font-size: 0.8em;
+        font-weight: 700;
+      }
+
+      #headcontent a:hover{
+        background-color: #333; 
+      }
+      
+      #headcontent #profile_pic{
+        width: 18px;
+        height: 20px;
+        vertical-align: middle;
+      }
+      
+      #headcontent #profile_link{
+        width: 20px;
+        height: 20px;
+      }      
+      /* ********* End of CSS rule declarations for semantic element header ********* */ 
+      
+      /* ********* CSS rule declarations for semantic element nav ********* */ 
+      nav{
+        background-color: #888;
+        height: 40px;
+        padding-top: 1px; 
+        position: fixed;
+        top: 140px;        
+        width: 960px;
+        z-index: 2;
+      }
+      
+      /* ********* CSS rule declarations for primary unordered list of nav ********* */ 
+      nav ul{
+        padding: 0;
+        margin: 0;
+        white-space: nowrap;
+        text-align: center;        
+      }
+      
+      /* ********* CSS rule declarations for primary list items of primary unordered list of nav ********* */       
+      nav ul li{
+        list-style-type: none;
+        display:inline-block; 
+        position: relative;
+        box-sizing: border-box;        
+      }
+      
+      /* ********* CSS rule declarations for main nav tabs menu ********* */ 
+      nav ul li a{
+        display: block;
+        text-decoration: none;
+        color: #000;
+        font-weight: 700;                
+        box-sizing: border-box;
+        padding: 10px 0 10px 0;
+        width: 162px;
+        border: 1px solid transparent;         
+        position: relative;        
+      }
+      
+      /* ********* CSS rule declarations for underline effect on main nav menu elements ********* */      
+      nav ul li a.main_nav::after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background-color: #030;
+        transition: width .3s ease-in-out;        
+      }
+      
+      /* ********* CSS rule declarations for "hover" for underline 
+                   effect on main nav menu elements ********* */
+      nav ul li a.main_nav:hover::after{
+        width: 100%; 
+      }
+      
+      
+      /* ********* CSS rule declarations hover on main menu elements of nav ********* */            
+      nav ul li a:hover{
+        color: #060;
+        text-shadow: -4px 2px 3px rgba(0,9,0,0.5);
+        background-color: #efe;  
+        border: 1px solid #030;         
+      }
+      
+      /* ********* CSS rule declarations for main menu element having sub menu elements of nav ********* */ 
+      nav ul li ul#sub_menu{
+        position: absolute;
+        background-color: #030;
+        top: 40px;
+        left: 0;
+        padding-left: 1px;        
+        width: 160px;        
+        display:none;
+        max-height:0;
+        -webkit-transition: max-height 500ms ease-in-out;
+        -moz-transition: max-height 500ms ease-in-out;
+        -o-transition: max-height 500ms ease-in-out;
+        transition: max-height 500ms ease-in-out;        
+      }
+      
+      /* ********* CSS rule declarations for hover on main menu element 
+                   having sub menu elements of nav ********* */ 
+      nav ul li.has_submenu:hover ul#sub_menu{        
+        display: block;
+        max-height: 350px;         
+      }
+      
+      /* ********* CSS rule declarations for list of sub menu elements of nav ********* */
+      nav ul li ul#sub_menu li{
+        display: block;
+        box-sizing: border-box;
+        background-color: #efe;
+        margin: 2px;         
+      }  
+      
+      /* ********* CSS rule declarations for hover on list of sub menu elements of nav ********* */
+      nav ul li ul#sub_menu li a:hover{
+        width: 158px;
+      }
+      /* ********* End of CSS rule declarations for semantic element nav ********* */
+      
+      /* ********* CSS rule declarations for semantic element section ********* */
+      section{
+        background-color: #ccc;
+        min-height: 650px;        
+        padding: 1px 30px 1px 30px;        
+        box-sizing: border-box;  
+        vertical-align: middle;
+      }
+      
+      /* ********* CSS rule declarations for h2 header element ********* */
+      h2{
+        text-align: center;
+        margin-bottom: 0;
+        padding-top: 180px;
+        font-weight: 700;
+      }
+        
+      /* ********* CSS rule declarations for fieldset elements of form of webpage ********* */
+      #annual_regform fieldset{
+        margin-top: 3px;
+        background-color: #eee;  
+        border: 1px solid #333;
+        margin-top: 10px;
+      }
+      
+      /* ********* CSS rule declarations for first fieldset element of form of webpage ********* */
+      #annual_regform fieldset#personalinfo{
+        margin-top: 5px;
+      }
+      
+      /* ********* CSS rule declarations for legend of form of webpage ********* */
+      #annual_regform legend{  
+        background-color: #888;
+        color: #fff;
+        padding: 8px;
+        border: 1px solid #333;
+        width: 150px;          
+      }
+      
+      /* ********* CSS rule declarations for label of form of webpage ********* */
+      #annual_regform label.info{
+        display: block;
+        width: 310px;
+        clear: both;
+        float: left; 
+        text-align: right;
+        padding-right: 20px;
+        padding-left: 90px        
+      }
+      
+      /* ********* CSS rule declarations for input elements of form of webpage ********* */
+      #annual_regform input[type="text"], 
+      #annual_regform input[type="tel"], 
+      #annual_regform input[type="number"], 
+      #annual_regform input[type="email"], 
+      #annual_regform input[type="url"],
+      #annual_regform input[list],
+      #annual_regform input[type="date"]{
+              width: 250px;
+              background-color: #eed;        
+              border: 2px solid #999;
+              padding: 6px;
+              font-family: 'Merriweather', serif;
+      }    
+      
+      /* ********* CSS rule declarations for disabled input elements of form of webpage ********* */  
+      #annual_regform #Name{
+        color: #030;
+        font-weight: 700;
+        background-color: #888;
+      }
+
+      /* ********* CSS rule declarations for h3 of webpage ********* */
+      h3{
+        text-align: center;
+        font-weight: 700;
+        font-size: 1.3em;
+        padding-top: 4px;
+      }
+      
+      /* ********* CSS rule declarations for video of webpage ********* */
+      #video_size{
+        width: 600px;
+      }
+      
+      /* ********* CSS rule declarations for class for shadow of div container of webpage ********* */
+      .shadow{
+        -webkit-box-shadow: 0 5px 8px rgba(0,5,0,0.8);
+        -moz-box-shadow: 0 5px 8px rgba(0,5,0,0.8);
+        box-shadow: 0 5px 8px rgba(0,5,0,0.8);        
+      }
+      
+      /* ********* CSS rule declarations for class for rounding corners of div container of webpage ********* */
+      .rounded{
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        border-radius: 15px;
+      }
+      
+      /* ********* CSS rule declarations for class for effects on div container for transform of webpage ********* */  
+      .basic_3dlook{ 
+        background: linear-gradient(#4a4, #def);
+        -webkit-transform-origin: 0 top;
+        -moz-transform-origin: 0 top;
+        -o-transform-origin: 0 top;
+        -ms-transform-origin: 0 top;
+        transform-origin: 0 top;
+        width: 150px;
+        min-height: 100px;
+        border: 1px solid #000;
+        padding: 25px 10px 0 10px;        
+        font-size: 1.5rem;           
+        transition: all .9s ease-in-out;
+        margin-bottom: 20px;
+        text-align: center;
+        vertical-align: bottom;
+      }
+      
+      /* ********* CSS rule declarations for div container having 
+                   div containers for transform of webpage ********* */
+      #fun_container{
+        float: right;        
+        perspective: 600px;  
+        perspective-origin: bottom center;
+        padding-right: 30px;
+        margin-top: 15px;
+        box-sizing: border-box;
+        display: inline-block;
+      }
+      
+      /* ********* CSS rule declarations for hover on div container for 3D transform of webpage ********* */
+      #fun3d1:hover{
+        -webkit-transform: rotateX(50deg);
+        -moz-transform: rotateX(50deg);
+        transform: rotateX(50deg);       
+      }
+      
+      /* ********* CSS rule declarations for div container for 2D transform of webpage ********* */
+      #fun2d2{
+        -webkit-transform-origin: 0 center;
+        -moz-transform-origin: 0 center;
+        -ms-transform-origin: 0 center;
+        transform-origin: 0 center;        
+      }
+      
+      /* ********* CSS rule declarations for hover on div container for 2D transform of webpage ********* */
+      #fun2d2:hover{       
+        -webkit-transform: skew(-20deg);
+        -moz-transform: skew(-20deg);
+        -ms-transform: skew(-20deg);
+        transform: skew(-20deg);        
+      }     
+      
+      /* ********* CSS rule declarations for div container for 2D transform of webpage ********* */
+      #fun2d3{        
+        perspective-origin: center;        
+      }
+      
+      /* ********* CSS rule declarations for hover on div container for 2D transform of webpage ********* */
+      #fun2d3:hover{
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1); 
+        -ms-transform: scale(1.1); 
+        transform: scale(1.1);
+      }
+      
+      /* ********* CSS rule declarations for class for main div container 
+                   having images for 3D transform of webpage ********* */
+      .stage{
+        margin:1em auto;
+        -webkit-perspective: 950px;
+        -moz-perspective: 950px;        
+        perspective: 950px;
+      }
+      
+      /* ********* CSS rule declarations for class for sub div container having 
+                   images for 3D transform of webpage ********* */
+      .spinner5{
+        -webkit-animation: spinner5 20s ease-out infinite;        
+        animation: spinner5 20s ease-out infinite;
+          
+        -webkit-transform-style:preserve-3d;        
+        -moz-transform-style:preserve-3d;       
+        transform-style:preserve-3d;
+      }
+      
+      /* ********* CSS rule declarations for hover on class for sub div container 
+                   having images for 3D transform of webpage ********* */
+      .spinner5:hover{
+        -webkit-animation-play-state:paused;
+        animation-play-state:paused;
+      }
+      
+      /* ********* CSS rule declarations on image1 for 3D transform of webpage ********* */
+      #rotate_img1{  
+        width: 200px;
+        height: 160px;
+        padding: 0 20px;  
+        position:absolute;
+        border:1px solid #ccc;
+        background:rgba(255,255,255,.8);
+        box-shadow:inset 0 0 20px rgba(0,0,0,.2); 
+        -webkit-transform: rotateY(0deg) translateZ(165px); 
+        -moz-transform: rotateY(0deg) translateZ(165px);       
+        transform: rotateY(0deg) translateZ(165px);
+      }
+      
+      /* ********* CSS rule declarations on image2 for 3D transform of webpage ********* */
+      #rotate_img2{
+        width: 213px;
+        height: 160px;
+        padding: 0 13.5px;
+        position:absolute;
+        border:1px solid #ccc;
+        background:rgba(255,255,255,.8);
+        box-shadow:inset 0 0 20px rgba(0,0,0,.2);
+        -webkit-transform: rotateY(72deg) translateZ(165px); 
+        -moz-transform: rotateY(72deg) translateZ(165px);       
+        transform: rotateY(72deg) translateZ(165px);
+      }
+      
+      /* ********* CSS rule declarations on image3 for 3D transform of webpage ********* */
+      #rotate_img3{
+        width: 240px;
+        height: 160px;
+        padding: 0 0;
+        position:absolute;
+        border:1px solid #ccc;
+        background:rgba(255,255,255,.8);
+        box-shadow:inset 0 0 20px rgba(0,0,0,.2);
+        -webkit-transform: rotateY(144deg) translateZ(165px); 
+        -moz-transform: rotateY(144deg) translateZ(165px);        
+        transform: rotateY(144deg) translateZ(165px);
+      }
+      
+      /* ********* CSS rule declarations on image4 for 3D transform of webpage ********* */
+      #rotate_img4{
+        width: 213px;
+        height: 160px;
+        padding: 0 13.5px;
+        position:absolute;
+        border:1px solid #ccc;
+        background:rgba(255,255,255,.8);
+        box-shadow:inset 0 0 20px rgba(0,0,0,.2);
+        -webkit-transform: rotateY(216deg) translateZ(165px); 
+        -moz-transform: rotateY(216deg) translateZ(165px);        
+        transform: rotateY(216deg) translateZ(165px);
+      }
+      
+      /* ********* CSS rule declarations on image5 for 3D transform of webpage ********* */
+      #rotate_img5{
+        width: 238px;
+        height: 160px;
+        padding: 0 1px;
+        position:absolute;
+        border:1px solid #ccc;
+        background:rgba(255,255,255,.8);
+        box-shadow:inset 0 0 20px rgba(0,0,0,.2);
+        -webkit-transform: rotateY(288deg) translateZ(165px); 
+        -moz-transform: rotateY(288deg) translateZ(165px);         
+        transform: rotateY(288deg) translateZ(165px);
+      }
+      
+      /* ********* CSS rule for the div that has images for 3d transform of webpage **********  */
+      #Image_3D{
+        width: 240px; 
+        height: 160px;
+      }
+      
+      /* ********* CSS rule declarations for div containing submit and reset buttons of webpage ********* */
+      #sent{
+        text-align: center;        
+      }
+
+      /* ********* CSS rule declarations for submit and reset buttons of webpage ********* */
+      input[type="submit"], input[type="reset"]{
+        padding: 10px;
+        display: inline-block;
+        width: 100px;
+        background-color: #666;
+        color: #fff;
+        border: 1px solid #eee;
+        font-weight: 700;
+        font-family: 'Merriweather', serif;
+      }
+
+      /* ********* CSS rule declarations for hover on submit and reset buttons of webpage ********* */
+      input[type="submit"]:hover, input[type="reset"]:hover{
+        background-color: #333;  
+      }           
+      /* ********* End of CSS rule declarations for semantic element section ********* */  
+      
+      /* ********* CSS rule declarations for semantic element footer ********* */       
+      footer{
+        height: 140px;
+        background-color: #444;
+        color: #fff;
+        padding: 1px 9px;
+        text-align: center;
+      }      
+      
+      footer #footer_menu ul#footmenu{
+        margin-top: 40px;
+        text-align: center;
+        vertical-align: bottom;  
+        margin-bottom: 20px;       
+      }
+
+      footer #footer_menu ul#footmenu li{
+        display: inline-block;  
+        list-style-type: none;
+      }
+
+      footer #footer_menu ul#footmenu li a{
+        text-decoration: none;         
+        color: #fff;
+        padding: 12px 20px 12px 20px;
+        display: block;
+        width: 100px;        
+      }
+
+      footer #footer_menu ul#footmenu li a:hover{
+        background-color: #999;
+      }
+      
+      footer #copy_right{             
+        color: #000;
+        font-weight: 700;       
+      }
+      
+      /* ********** CSS style for hiding 3d nested transform on IE 10 and 11 ********** */
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {		
+			  #Image_3D {
+				  display: none;
+			  }
+		  }      
+      /* ********* End of CSS rule declarations for semantic element footer ********* */
+      
+    </style>    
+  </head>
+
+  <body>
+    <div id="wrapper"> <!-- Contains the entire page -->       
+      <header>     
+        <img id="logo" alt="logo" src="Images/Logo.jpg" />
+        
+        <h1>Bengaluru Kulshrestha</h1>      
+        
+        <div id="headcontent">
+          <a id="profile_link" href="#">
+            <img id="profile_pic" alt="profile pic" src="Images/blank-profile-picture.png" />
+          </a>
+          
+          <input type="text" 
+                 name="search"
+                 id="search"                
+                 placeholder="Search Here"/>
+                 
+          <a href="#">Search</a>                
+          <a href="#">Logout</a> 
+        </div>      
+      </header>
+      
+      <nav>       
+        <ul>
+          <li><a class="main_nav" href="#">Home</a></li>
+          <li><a class="main_nav" href="#">About Us</a></li>
+          <li class="has_submenu"><a class="main_nav" href="#">Events</a>
+            <ul id="sub_menu">
+              <li><a href="#">Annual Meet</a></li>
+              <li><a href="#">Picnic</a></li>
+              <li><a href="#">News</a></li>
+              <li><a href="#">Gallery</a></li>
+              <li><a href="#">Videos</a></li>                                       
+            </ul>
+          </li>
+          <li class="has_submenu"><a class="main_nav" href="#">Registration</a>             
+          </li>   
+          <li><a class="main_nav" href="#">Contact Us</a></li>
+        </ul>        
+      </nav>
+      
+      <section id="content">       
+        <h2>Annual Meet Registration</h2>
+        
+        <!-- Form to collect info for annual meet registration -->
+        <form id="annual_regform"
+           method="post"
+           action="http://www.scott-media.com/test/form_display.php" 
+           autocomplete="on">            
+          
+          <!-- in future these elements may be replaced by backend code -->
+          <input type="hidden" name="name" value="Anu Kulshrestha" />
+          <input type="hidden" name="emailid" value="anusrivastava2004@gmail.com" />
+          
+          <!-- 1st part of the form for personal details -->
+          <fieldset id="personalinfo">
+            <legend>Personal Info</legend>
+            
+            <!-- Person's Name. In future will be fetched from backend -->
+            <p>
+              <label class="info" for="Name">Your Registered Name:</label> 
+              <input type="text" 
+                     name="Name"
+                     id="Name" 
+                     maxlength="40" 
+                     size="20" value="Anu Kulshrestha" disabled/> 
+            </p>                
+            
+            <!-- Person's Mobile number -->
+            <p>
+              <label class="info" for="mob_number">Contact Number (M):</label>
+              <input type="tel"
+                     name="mob_number"
+                     id="mob_number" 
+                     required="required"
+                     placeholder="Enter your Mobile no." autocomplete="off"/>
+            </p>           
+            
+            <!-- Person's Family Members attending in numbers -->
+            <p> 
+              <label class="info" for="familyMembers">Family Members Attending the Event:</label>
+              <input type="number"
+                     name="familyMembers"
+                     id="familyMembers"
+                     required="required"
+                     placeholder="In numbers"/>
+            </p>            
+            
+            <!-- Person's number of Kids attending in numbers (if any)-->
+            <p> 
+              <label class="info" for="kids">Kids Attending the Event:</label>
+              <input type="number"
+                     name="kids"
+                     id="kids"
+                     required="required"
+                     placeholder="In numbers"/>
+            </p>                 
+            
+            <!-- Select option to participate in the event-->
+            <p> 
+              <label class="info">Wish to Participate in Any Event:</label>
+              <input list="participation" name="participation" required="required">
+              <datalist id="participation">                                       
+                <option value="Yes"></option>
+                <option value="No"></option>
+                <option value="Not Yet Decided"></option>                         
+              </datalist>
+            </p>        
+            
+            <!-- Any extra information to share with admin -->
+            <p> 
+              <label class="info" for="addinfo">Additional Information:</label> 
+              <textarea name="addinfo" 
+                        id="addinfo" 
+                        cols="34"
+                        rows="3" 
+                        placeholder="You may enter your ideas here or suggest any performance"></textarea>          
+            </p>        
+          </fieldset>           
+          <!-- End of 1st part of the form for personal details -->
+         
+          <!-- 2nd part of the form for additional details -->
+          <fieldset>        
+            <legend>Additional Details</legend>
+
+            <!-- Person's email id. In future will be fetched from backend -->
+            <p>
+              <label class="info" for="email_address">Registered Email Id:</label>
+              <input type="email" 
+                     name="email_address"
+                     id="email_address"/> 
+            </p>
+            
+            <!-- Ask for optional mobile number. -->
+            <p>
+              <label class="info" for="optional_mobile">Mobile Number (Optional):</label>
+              <input type="tel"
+                     name="optional_mobile"
+                     id="optional_mobile"                    
+                     placeholder="Enter Your Optional Mobile Number"/> 
+            </p>
+            
+            <!-- ask for link to share for ideas to celebrate the event games -->
+            <p>
+              <label class="info"  for="game_link">Suggest Any Event Games with Website Link:</label>
+              <input type="url" id="game_link" name="game_link" />
+            </p>
+            
+            <!-- ask for date anyone prefers to change the annual meet -->
+            <p>
+              <label class="info" for="event_date">Alternate Date You Prefer:</label>
+              <input type="date"
+                     name="event_date"
+                     id="event_date" /> 
+            </p>            
+          </fieldset> 
+          <!-- End of 2nd part of the form for login registration -->
+          
+          <!-- 3rd part of the form for video, 3D and 2D transform -->
+          <fieldset>        
+            <legend>Devotional Video</legend>
+            
+            <h3><strong>**Note: Keep the Speakers at Low Volume**</strong></h3>
+            
+            <video id="video_size" autoplay controls>
+              <source src="Videos/ChitraguptAarti.mp4" type="video/mp4"/> <!-- for ipad we keep the mp4 first. -->
+              <source src="Videos/SARASWATI_VANDANA.webm" type="video/webm"/> <!-- -->
+              <source src="Videos/Chitragupt_Vandana.ogv" type="video/ogg"/> <!-- -->
+              Sorry, your browser does not support HTML5 Video.      
+            </video>
+            
+            <div id="fun_container">
+              <div id="fun3d1" class="shadow rounded basic_3dlook">Join the Event</div>
+              <div id="fun2d2" class="shadow rounded basic_3dlook">Perform and Enjoy</div>
+              <div id="fun2d3" class="shadow rounded basic_3dlook">Meet New Pals</div>
+            </div>            
+            
+            <div id="Image_3D" class="stage">              
+              <div class="spinner5">
+                <img id="rotate_img1" src="Images/ChitraguptBhagvan.jpg" alt="Pictures" />
+                <img id="rotate_img2" src="Images/Ganpati.jpg" alt="Pictures" />
+                <img id="rotate_img3" src="Images/Saraswati.jpg" alt="Pictures" />
+                <img id="rotate_img4" src="Images/RamDarbar.jpg" alt="Pictures" />
+                <img id="rotate_img5" src="Images/SherowaliMaa.jpg" alt="Pictures" />                
+              </div>
+            </div>
+          </fieldset>
+          <!-- End of 3rd part of the form for video, 3D and 2D transform -->
+          
+          <!-- Action buttons -->
+          <p id="sent">
+            <input type="submit" 
+                   id="subreg" 
+                   value="Register"/> &nbsp; <!-- Click to submit for registration -->
+            <input type="reset"
+                    value="Clear Form"/> <!-- Click to clear the form -->       
+          </p>             
+        </form>        
+      </section>     
+      
+      <footer>      
+        <div id="footer_menu">
+          <ul id="footmenu">          
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Contact Us</a></li>          
+            <li><a href="#">Join Us</a></li>          
+          </ul>
+        </div>
+        
+        <div id="copy_right">
+          &copy; 2020 AYN Technologies Ltd. All Rights Reserved.
+        </div>        
+      </footer>    
+    </div>
+  </body>
+</html>
